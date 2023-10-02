@@ -47,8 +47,8 @@ public class QuestionService {
         return new ResponseEntity<>( "Question deleted successfully",HttpStatus.OK);
     }
 
-    public String updateQuestion(Question question) {
+    public ResponseEntity <String> updateQuestion(Question question) {
         questionDao.save(question);
-        return "Question updated successfully";
+        return new ResponseEntity<>("Question updated successfully",HttpStatus.OK);
     }
 }
