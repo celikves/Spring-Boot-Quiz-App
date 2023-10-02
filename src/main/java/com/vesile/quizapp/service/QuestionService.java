@@ -42,9 +42,9 @@ public class QuestionService {
         return new ResponseEntity<>( "Question added successfully",HttpStatus.CREATED);
     }
 
-    public String deleteQuestion(Integer id) {
+    public ResponseEntity< String> deleteQuestion(Integer id) {
         questionDao.deleteById(id);
-        return "Question deleted successfully";
+        return new ResponseEntity<>( "Question deleted successfully",HttpStatus.OK);
     }
 
     public String updateQuestion(Question question) {
