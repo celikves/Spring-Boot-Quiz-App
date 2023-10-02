@@ -38,17 +38,42 @@ public class QuestionService {
     }
 
     public ResponseEntity<String> addQuestion( Question question) {
-        questionDao.save(question);
-        return new ResponseEntity<>( "Question added successfully",HttpStatus.CREATED);
+
+        try{
+            questionDao.save(question);
+            return new ResponseEntity<>( "Question added successfully",HttpStatus.CREATED);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>( "Question could not be added",HttpStatus.BAD_REQUEST);
+
     }
 
     public ResponseEntity< String> deleteQuestion(Integer id) {
-        questionDao.deleteById(id);
-        return new ResponseEntity<>( "Question deleted successfully",HttpStatus.OK);
+        try {
+            questionDao.deleteById(id);
+            return new ResponseEntity<>( "Question deleted successfully",HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>( "Question could not be deleted",HttpStatus.BAD_REQUEST);
+
+
     }
 
     public ResponseEntity <String> updateQuestion(Question question) {
-        questionDao.save(question);
-        return new ResponseEntity<>("Question updated successfully",HttpStatus.OK);
+
+        try{
+            questionDao.save(question);
+            return new ResponseEntity<>("Question updated successfully",HttpStatus.OK);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>("Question could not be updated",HttpStatus.BAD_REQUEST);
+
+
     }
 }
