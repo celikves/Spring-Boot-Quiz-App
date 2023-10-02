@@ -4,6 +4,7 @@ package com.vesile.quizapp.controller;
 import com.vesile.quizapp.Question;
 import com.vesile.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class QuestionController {
     QuestionService questionService;
 
     @GetMapping("allQuestions")
-    public List<Question>  getAllQuestions(){
-        return questionService.getAllQuestions();
+    public ResponseEntity<List<Question>>  getAllQuestions(){
+        return questionService.getAllQuestions() ;
     }
 
     @GetMapping("category/{category}")
