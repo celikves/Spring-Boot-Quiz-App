@@ -37,9 +37,9 @@ public class QuestionService {
 
     }
 
-    public String addQuestion( Question question) {
+    public ResponseEntity<String> addQuestion( Question question) {
         questionDao.save(question);
-        return "Question added successfully";
+        return new ResponseEntity<>( "Question added successfully",HttpStatus.CREATED);
     }
 
     public String deleteQuestion(Integer id) {
