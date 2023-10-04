@@ -1,6 +1,6 @@
 package com.vesile.quizapp.service;
 
-import com.vesile.quizapp.Question;
+import com.vesile.quizapp.model.Question;
 import com.vesile.quizapp.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

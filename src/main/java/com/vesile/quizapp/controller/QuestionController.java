@@ -1,7 +1,7 @@
 package com.vesile.quizapp.controller;
 
 
-import com.vesile.quizapp.Question;
+import com.vesile.quizapp.model.Question;
 import com.vesile.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
